@@ -1,0 +1,3133 @@
+{
+  "comparison": {
+    "H_local_plus_Polynomial_global": {
+      "degree": 2,
+      "inlier_count": 30,
+      "loo_rmse_all": 0.10687415030111964,
+      "loo_rmse_inliers": 0.10687415030111964,
+      "max_all": 0.16802459445279072,
+      "median_all": 0.061253720395571275,
+      "rmse_all": 0.08318254446441642,
+      "rmse_inliers": 0.08318254446441642,
+      "terms": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "Polynomial_local_plus_H_global": {
+      "max_grid": 0.3701278677248249,
+      "median_grid": 0.08821661402811401,
+      "rmse_grid": 0.1298407016369042
+    },
+    "Polynomial_local_plus_Polynomial_global": {
+      "degree": 2,
+      "inlier_count": 29,
+      "loo_rmse_all": 0.17318775647874357,
+      "loo_rmse_inliers": 0.0811265655795604,
+      "max_all": 0.7235327002322447,
+      "median_all": 0.054308752134327454,
+      "rmse_all": 0.14521604282166192,
+      "rmse_inliers": 0.06134453421907962,
+      "terms": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "baseline_H_local_plus_H_global": {
+      "max_grid": 0.27446810243048597,
+      "median_grid": 0.08663306804878687,
+      "rmse_grid": 0.11871111304618938
+    },
+    "pose_quality": {
+      "H_local_centres_plus_Polynomial_global": {
+        "max_abs": [
+          0.007832404834177464,
+          0.011488681277866175,
+          0.0
+        ],
+        "mean_abs": [
+          0.002444027910975899,
+          0.0038104950187965187,
+          0.0
+        ]
+      },
+      "Polynomial_local_centres_plus_H_global": {
+        "max_abs": [
+          0.0166453293979848,
+          0.011475315589144608,
+          0.0
+        ],
+        "mean_abs": [
+          0.006017703422688882,
+          0.004049247410224841,
+          0.0
+        ]
+      },
+      "Polynomial_local_centres_plus_Polynomial_global": {
+        "max_abs": [
+          0.008416607036073165,
+          0.010849274811438048,
+          0.0
+        ],
+        "mean_abs": [
+          0.0020110752761983226,
+          0.002463839364449615,
+          0.0
+        ]
+      },
+      "baseline_H_local_centres_plus_H_global": {
+        "max_abs": {
+          "pan": 0.014876156879059299,
+          "tilt": 0.01805466378579257,
+          "zoom": 0.0
+        },
+        "mean_abs": {
+          "pan": 0.005619326848989466,
+          "tilt": 0.0044577055351270175,
+          "zoom": 0.0
+        }
+      }
+    }
+  },
+  "global_mapping": {
+    "coefficients_uv": [
+      [
+        2.0272672551797415,
+        2.469940734074789
+      ],
+      [
+        2.15834917776214,
+        -0.024490790006073432
+      ],
+      [
+        0.0022664377628866528,
+        2.7545371984940292
+      ],
+      [
+        -0.01892330564350231,
+        0.03610419294742351
+      ],
+      [
+        0.004747586122629252,
+        -0.12284843480375628
+      ],
+      [
+        -0.016904920240048416,
+        -0.3173175657892323
+      ]
+    ],
+    "degree": 2,
+    "input_normalization": {
+      "height": 1440,
+      "width": 2560
+    },
+    "linearity_probe": {
+      "affine_coefficients_intercept_u_v": [
+        [
+          0.9317804206428565,
+          -0.14623809011904754,
+          0.0
+        ],
+        [
+          -0.11787222331666657,
+          0.007407407433333367,
+          0.0
+        ],
+        [
+          -0.0025092044571428662,
+          -0.07612698570571425,
+          0.0
+        ]
+      ],
+      "affine_rmse": {
+        "pan": 0.02101942538239007,
+        "tilt": 0.027130878654915366,
+        "zoom": 0.0
+      }
+    },
+    "mapping_type": "polynomial_wide_pixel_to_ptz_lattice",
+    "pchip_trigger": 0.0015,
+    "state_grid_actual_after_capture": [
+      [
+        [
+          0.905499995,
+          -0.122111112,
+          0.0
+        ],
+        [
+          0.79438889,
+          -0.155444443,
+          0.0
+        ],
+        [
+          0.694388866,
+          -0.155444443,
+          0.0
+        ],
+        [
+          0.594388902,
+          -0.144333333,
+          0.0
+        ],
+        [
+          0.483277768,
+          -0.0887777805,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.905499995,
+          -0.199888885,
+          0.0
+        ],
+        [
+          0.800000012,
+          -0.233222216,
+          0.0
+        ],
+        [
+          0.694388866,
+          -0.233222216,
+          0.0
+        ],
+        [
+          0.588833332,
+          -0.210999995,
+          0.0
+        ],
+        [
+          0.483277768,
+          -0.166555554,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.911055565,
+          -0.266555548,
+          0.0
+        ],
+        [
+          0.800000012,
+          -0.299888879,
+          0.0
+        ],
+        [
+          0.688833356,
+          -0.31099999,
+          0.0
+        ],
+        [
+          0.583277762,
+          -0.288777769,
+          0.0
+        ],
+        [
+          0.472166657,
+          -0.244333327,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.922166646,
+          -0.344333321,
+          0.0
+        ],
+        [
+          0.805499971,
+          -0.377666652,
+          0.0
+        ],
+        [
+          0.688833356,
+          -0.388777792,
+          0.0
+        ],
+        [
+          0.577722251,
+          -0.366555542,
+          0.0
+        ],
+        [
+          0.461055547,
+          -0.31099999,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.938833356,
+          -0.411000013,
+          0.0
+        ],
+        [
+          0.811055541,
+          -0.455444455,
+          0.0
+        ],
+        [
+          0.683277786,
+          -0.466555566,
+          0.0
+        ],
+        [
+          0.561055541,
+          -0.433222234,
+          0.0
+        ],
+        [
+          0.433277786,
+          -0.388777792,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.977722228,
+          -0.488777786,
+          0.0
+        ],
+        [
+          0.827722251,
+          -0.544333339,
+          0.0
+        ],
+        [
+          0.677722216,
+          -0.56655556,
+          0.0
+        ],
+        [
+          0.53883332,
+          -0.533222198,
+          0.0
+        ],
+        [
+          0.388833344,
+          -0.455444455,
+          0.0
+        ]
+      ]
+    ],
+    "state_surface": "pchip_2d_separable",
+    "terms_powers_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "global_stage": {
+    "all_polynomial_models": [
+      {
+        "degree": 1,
+        "inlier_count": 30,
+        "loo_rmse_all": 0.15717239201352418,
+        "loo_rmse_inliers": 0.15717239201352418,
+        "max_all": 0.26160936280004665,
+        "median_all": 0.11144676957419125,
+        "rmse_all": 0.13944809550390302,
+        "rmse_inliers": 0.13944809550390302,
+        "terms": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "degree": 2,
+        "inlier_count": 29,
+        "loo_rmse_all": 0.17318775647874357,
+        "loo_rmse_inliers": 0.0811265655795604,
+        "max_all": 0.7235327002322447,
+        "median_all": 0.054308752134327454,
+        "rmse_all": 0.14521604282166192,
+        "rmse_inliers": 0.06134453421907962,
+        "terms": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "degree": 3,
+        "inlier_count": 30,
+        "loo_rmse_all": 0.19087742628124577,
+        "loo_rmse_inliers": 0.19087742628124577,
+        "max_all": 0.1726713485499633,
+        "median_all": 0.05489377265860172,
+        "rmse_all": 0.08064554362145394,
+        "rmse_inliers": 0.08064554362145394,
+        "terms": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    ],
+    "homography_fit_on_polynomial_centres": {
+      "inlier_count": 30,
+      "max": 0.3701278677248249,
+      "median": 0.08821661402811401,
+      "rmse": 0.1298407016369042
+    },
+    "input": "30 Polynomial local centres",
+    "polynomial_coefficients_uv": [
+      [
+        2.0272672551797415,
+        2.469940734074789
+      ],
+      [
+        2.15834917776214,
+        -0.024490790006073432
+      ],
+      [
+        0.0022664377628866528,
+        2.7545371984940292
+      ],
+      [
+        -0.01892330564350231,
+        0.03610419294742351
+      ],
+      [
+        0.004747586122629252,
+        -0.12284843480375628
+      ],
+      [
+        -0.016904920240048416,
+        -0.3173175657892323
+      ]
+    ],
+    "ransac_threshold_grid_units": 0.35,
+    "selected_polynomial": {
+      "degree": 2,
+      "inlier_count": 29,
+      "loo_rmse_all": 0.17318775647874357,
+      "loo_rmse_inliers": 0.0811265655795604,
+      "max_all": 0.7235327002322447,
+      "median_all": 0.054308752134327454,
+      "rmse_all": 0.14521604282166192,
+      "rmse_inliers": 0.06134453421907962,
+      "terms": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "target": "5x6 PTZ grid coordinates (u=column, v=row)",
+    "terms_powers_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "local_stage": {
+    "degree": 2,
+    "input": "saved LightGlue match points in each PTZ/Wide pair",
+    "max_centre_delta_from_saved_H_px": 107.22347769213198,
+    "mean_centre_delta_from_saved_H_px": 23.61318927684946,
+    "output": "PTZ image centre projected to Wide",
+    "pairs": [
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -18.070000995741452,
+          -105.68987289427983
+        ],
+        "column": 0,
+        "h_max_all_px": 97.83506939367503,
+        "h_median_all_px": 22.808334053503575,
+        "h_rmse_all_px": 44.05579828612223,
+        "h_rmse_saved_inliers_px": 3.528717628099615,
+        "local_polynomial_centre_on_wide": [
+          71.44340385044995,
+          -12.239143524162639
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            71.44340385044995,
+            -12.239143524162639
+          ],
+          [
+            800.4838595687231,
+            -180.07017775292672
+          ],
+          [
+            20.768923635960732,
+            1145.1223020299499
+          ],
+          [
+            74.6907188653962,
+            29.327389998343904
+          ],
+          [
+            -137.37510206373557,
+            7.638241415469594
+          ],
+          [
+            120.33729411307519,
+            -487.3472419846364
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 22,
+        "local_polynomial_max_all_px": 69.27445166846334,
+        "local_polynomial_median_all_px": 13.354840001944279,
+        "local_polynomial_rmse_all_px": 25.226044886299963,
+        "local_polynomial_rmse_inliers_px": 2.819711462837579,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 63,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_00__wide_03.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_00_row00_col00.jpg",
+        "ptz_index": 0,
+        "row": 0,
+        "saved_h_centre_on_wide": [
+          89.5134048461914,
+          93.45072937011719
+        ],
+        "saved_h_inlier_count": 17,
+        "wide_id": "wide_03"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          0.8062023015131672,
+          1.9305154179348847
+        ],
+        "column": 1,
+        "h_max_all_px": 106.06259583525583,
+        "h_median_all_px": 27.42074995558721,
+        "h_rmse_all_px": 46.24044642485523,
+        "h_rmse_saved_inliers_px": 3.311871067216711,
+        "local_polynomial_centre_on_wide": [
+          661.7291759343257,
+          131.0234414433255
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            661.7291759343257,
+            131.0234414433255
+          ],
+          [
+            888.6415005274864,
+            -85.70494040502649
+          ],
+          [
+            86.73442505488833,
+            639.2188978144472
+          ],
+          [
+            21.424959971191583,
+            66.80795039930999
+          ],
+          [
+            -95.02248329484863,
+            9.338174054275914
+          ],
+          [
+            -10.89842679253735,
+            -17.089386134012216
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 35,
+        "local_polynomial_max_all_px": 105.84690101707002,
+        "local_polynomial_median_all_px": 11.211655981855172,
+        "local_polynomial_rmse_all_px": 41.80321557089546,
+        "local_polynomial_rmse_inliers_px": 3.1411772437130794,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 87,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_01__wide_00.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_01_row00_col01.jpg",
+        "ptz_index": 1,
+        "row": 0,
+        "saved_h_centre_on_wide": [
+          660.9229736328125,
+          129.09292602539062
+        ],
+        "saved_h_inlier_count": 22,
+        "wide_id": "wide_00"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          1.5252008895622566,
+          19.017518669656326
+        ],
+        "column": 2,
+        "h_max_all_px": 162.32987806311536,
+        "h_median_all_px": 5.057289790753759,
+        "h_rmse_all_px": 45.35545556743364,
+        "h_rmse_saved_inliers_px": 3.2000030712635796,
+        "local_polynomial_centre_on_wide": [
+          1275.1246881942498,
+          111.00185552268367
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1275.1246881942498,
+            111.00185552268367
+          ],
+          [
+            881.7730827000157,
+            30.88016988284636
+          ],
+          [
+            -12.149300463719953,
+            650.1821755589727
+          ],
+          [
+            -20.554699791448513,
+            47.09809759979508
+          ],
+          [
+            -33.17923489524418,
+            -37.48446828369422
+          ],
+          [
+            -13.625759478049417,
+            -5.160259249900108
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 126,
+        "local_polynomial_max_all_px": 83.46030476467,
+        "local_polynomial_median_all_px": 3.448635709806675,
+        "local_polynomial_rmse_all_px": 26.172392469213097,
+        "local_polynomial_rmse_inliers_px": 3.2587559945666564,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 182,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_02__wide_02.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_02_row00_col02.jpg",
+        "ptz_index": 2,
+        "row": 0,
+        "saved_h_centre_on_wide": [
+          1273.5994873046875,
+          91.98433685302734
+        ],
+        "saved_h_inlier_count": 105,
+        "wide_id": "wide_02"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -4.48181302652165,
+          -2.508480040381812
+        ],
+        "column": 3,
+        "h_max_all_px": 74.02833382439249,
+        "h_median_all_px": 6.460717091063243,
+        "h_rmse_all_px": 25.252102547122686,
+        "h_rmse_saved_inliers_px": 3.6748032480918753,
+        "local_polynomial_centre_on_wide": [
+          1857.0819076766034,
+          131.22005084340725
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1857.0819076766034,
+            131.22005084340725
+          ],
+          [
+            861.3718375256336,
+            116.14815367520976
+          ],
+          [
+            -42.62682727667095,
+            638.8765943002604
+          ],
+          [
+            -18.40586562045496,
+            61.80051242453288
+          ],
+          [
+            -43.08830278812236,
+            3.8115643102262915
+          ],
+          [
+            -36.94980258734091,
+            -8.803657235562014
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 127,
+        "local_polynomial_max_all_px": 73.93915709696726,
+        "local_polynomial_median_all_px": 4.057439584262175,
+        "local_polynomial_rmse_all_px": 21.689819491474815,
+        "local_polynomial_rmse_inliers_px": 2.995920949966324,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 212,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_03__wide_01.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_03_row00_col03.jpg",
+        "ptz_index": 3,
+        "row": 0,
+        "saved_h_centre_on_wide": [
+          1861.563720703125,
+          133.72853088378906
+        ],
+        "saved_h_inlier_count": 111,
+        "wide_id": "wide_01"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          7.241232185997887,
+          17.811079091303355
+        ],
+        "column": 4,
+        "h_max_all_px": 62.497191121707814,
+        "h_median_all_px": 4.973601729945559,
+        "h_rmse_all_px": 17.526457413530117,
+        "h_rmse_saved_inliers_px": 3.5147696538547657,
+        "local_polynomial_centre_on_wide": [
+          2503.050558357873,
+          100.01889616894007
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            2503.050558357873,
+            100.01889616894007
+          ],
+          [
+            811.9547483129111,
+            234.74650087272542
+          ],
+          [
+            -90.30120911025762,
+            623.3786149569711
+          ],
+          [
+            -45.6184594935533,
+            76.8042913508362
+          ],
+          [
+            -86.23001682768773,
+            23.8315500761286
+          ],
+          [
+            -41.11493402498792,
+            9.245720223722788
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 106,
+        "local_polynomial_max_all_px": 66.40155741905205,
+        "local_polynomial_median_all_px": 3.922547227843408,
+        "local_polynomial_rmse_all_px": 16.167068101972013,
+        "local_polynomial_rmse_inliers_px": 3.4898894192342693,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 146,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_04__wide_00.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_04_row00_col04.jpg",
+        "ptz_index": 4,
+        "row": 0,
+        "saved_h_centre_on_wide": [
+          2495.809326171875,
+          82.20781707763672
+        ],
+        "saved_h_inlier_count": 90,
+        "wide_id": "wide_00"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          20.22273496227359,
+          1.3037409680566725
+        ],
+        "column": 0,
+        "h_max_all_px": 790.4905349134415,
+        "h_median_all_px": 11.316359596729072,
+        "h_rmse_all_px": 102.16382921356089,
+        "h_rmse_saved_inliers_px": 3.7389956667543385,
+        "local_polynomial_centre_on_wide": [
+          88.70025113659,
+          370.0922541516504
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            88.70025113659,
+            370.0922541516504
+          ],
+          [
+            771.7057694258117,
+            -196.71517530780346
+          ],
+          [
+            80.44482779635064,
+            639.7845534221536
+          ],
+          [
+            60.94193483077592,
+            46.34086166065528
+          ],
+          [
+            -57.25035380671403,
+            -34.193460525596635
+          ],
+          [
+            65.82052188260809,
+            -10.442436283312603
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 74,
+        "local_polynomial_max_all_px": 694.4193666551832,
+        "local_polynomial_median_all_px": 5.635889200172002,
+        "local_polynomial_rmse_all_px": 90.49812086492858,
+        "local_polynomial_rmse_inliers_px": 3.31467703946086,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 135,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_05__wide_04.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_05_row01_col00.jpg",
+        "ptz_index": 5,
+        "row": 1,
+        "saved_h_centre_on_wide": [
+          68.4775161743164,
+          368.78851318359375
+        ],
+        "saved_h_inlier_count": 56,
+        "wide_id": "wide_04"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          24.021322217177044,
+          63.72656114837315
+        ],
+        "column": 1,
+        "h_max_all_px": 337.1411039445666,
+        "h_median_all_px": 12.12147465277994,
+        "h_rmse_all_px": 69.10895359996084,
+        "h_rmse_saved_inliers_px": 4.110524975407279,
+        "local_polynomial_centre_on_wide": [
+          668.037191357802,
+          382.36340196868565
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            668.037191357802,
+            382.36340196868565
+          ],
+          [
+            901.3287727813073,
+            -96.43025129298701
+          ],
+          [
+            32.546728716070675,
+            626.3304093185957
+          ],
+          [
+            62.048951379605626,
+            33.510068467689386
+          ],
+          [
+            -103.1938480683612,
+            1.0689867817511498
+          ],
+          [
+            33.28588230316137,
+            2.882203208444025
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 120,
+        "local_polynomial_max_all_px": 141.05233491779185,
+        "local_polynomial_median_all_px": 6.761938254924768,
+        "local_polynomial_rmse_all_px": 37.16442622784827,
+        "local_polynomial_rmse_inliers_px": 3.7013162962016417,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 237,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_06__wide_03.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_06_row01_col01.jpg",
+        "ptz_index": 6,
+        "row": 1,
+        "saved_h_centre_on_wide": [
+          644.015869140625,
+          318.6368408203125
+        ],
+        "saved_h_inlier_count": 100,
+        "wide_id": "wide_03"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -8.498028508399784,
+          9.267131069128766
+        ],
+        "column": 2,
+        "h_max_all_px": 463.4622148215353,
+        "h_median_all_px": 10.179303656566542,
+        "h_rmse_all_px": 56.03791550688881,
+        "h_rmse_saved_inliers_px": 3.561326391751536,
+        "local_polynomial_centre_on_wide": [
+          1262.5711853587877,
+          356.6970016745975
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1262.5711853587877,
+            356.6970016745975
+          ],
+          [
+            881.426553974537,
+            32.77960282083956
+          ],
+          [
+            -9.596406784713167,
+            620.457325460087
+          ],
+          [
+            -27.255348277231008,
+            24.161457650062943
+          ],
+          [
+            -43.207000982474696,
+            9.832875811167533
+          ],
+          [
+            -3.8053734233997147,
+            32.02103420589971
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 155,
+        "local_polynomial_max_all_px": 463.6765209828947,
+        "local_polynomial_median_all_px": 7.868822573114149,
+        "local_polynomial_rmse_all_px": 49.8253632618941,
+        "local_polynomial_rmse_inliers_px": 3.5541615407218967,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 326,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_07__wide_01.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_07_row01_col02.jpg",
+        "ptz_index": 7,
+        "row": 1,
+        "saved_h_centre_on_wide": [
+          1271.0692138671875,
+          347.42987060546875
+        ],
+        "saved_h_inlier_count": 136,
+        "wide_id": "wide_01"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          0.9964881209014038,
+          -1.127021228830813
+        ],
+        "column": 3,
+        "h_max_all_px": 163.45721338650299,
+        "h_median_all_px": 8.205194322162376,
+        "h_rmse_all_px": 45.00309783573993,
+        "h_rmse_saved_inliers_px": 3.6778342704275455,
+        "local_polynomial_centre_on_wide": [
+          1867.579373863089,
+          347.8911672477317
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1867.579373863089,
+            347.8911672477317
+          ],
+          [
+            854.1519182948326,
+            130.74456602466188
+          ],
+          [
+            -68.33544438886179,
+            638.6301772786496
+          ],
+          [
+            -75.32301464749361,
+            34.042673395621904
+          ],
+          [
+            -60.44300653841298,
+            19.536238271067326
+          ],
+          [
+            -27.76943988587925,
+            13.221910706777408
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 151,
+        "local_polynomial_max_all_px": 103.36552578325013,
+        "local_polynomial_median_all_px": 6.174352284080017,
+        "local_polynomial_rmse_all_px": 25.698816086076697,
+        "local_polynomial_rmse_inliers_px": 3.535721282349757,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 283,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_08__wide_05.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_08_row01_col03.jpg",
+        "ptz_index": 8,
+        "row": 1,
+        "saved_h_centre_on_wide": [
+          1866.5828857421875,
+          349.0181884765625
+        ],
+        "saved_h_inlier_count": 131,
+        "wide_id": "wide_05"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          2.83292005862495,
+          17.482914955143542
+        ],
+        "column": 4,
+        "h_max_all_px": 147.93454224685405,
+        "h_median_all_px": 6.069826813485181,
+        "h_rmse_all_px": 41.53092564710733,
+        "h_rmse_saved_inliers_px": 3.5516482575211628,
+        "local_polynomial_centre_on_wide": [
+          2455.336826308625,
+          339.5726976699873
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            2455.336826308625,
+            339.5726976699873
+          ],
+          [
+            771.539459972839,
+            234.42433727177112
+          ],
+          [
+            -118.32669664861305,
+            651.8173934353916
+          ],
+          [
+            -42.84740236271068,
+            62.28337869502922
+          ],
+          [
+            -40.863135775868784,
+            50.127785819535
+          ],
+          [
+            -31.49620486160518,
+            -7.632879331148068
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 125,
+        "local_polynomial_max_all_px": 112.77876734697477,
+        "local_polynomial_median_all_px": 4.225904886224882,
+        "local_polynomial_rmse_all_px": 30.678280259542507,
+        "local_polynomial_rmse_inliers_px": 3.0108125631068026,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 210,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_09__wide_08.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_09_row01_col04.jpg",
+        "ptz_index": 9,
+        "row": 1,
+        "saved_h_centre_on_wide": [
+          2452.50390625,
+          322.08978271484375
+        ],
+        "saved_h_inlier_count": 113,
+        "wide_id": "wide_08"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          22.167903456719998,
+          7.817298641596949
+        ],
+        "column": 0,
+        "h_max_all_px": 142.01610883958875,
+        "h_median_all_px": 7.787896606126946,
+        "h_rmse_all_px": 35.61989086475597,
+        "h_rmse_saved_inliers_px": 3.8452044959529164,
+        "local_polynomial_centre_on_wide": [
+          87.5188556051575,
+          590.6220471767532
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            87.5188556051575,
+            590.6220471767532
+          ],
+          [
+            777.8848702747538,
+            -219.45766883260117
+          ],
+          [
+            150.28343305498134,
+            629.2018435374812
+          ],
+          [
+            51.57296743624059,
+            34.628848910156805
+          ],
+          [
+            -85.64552701168304,
+            -38.0925800738768
+          ],
+          [
+            51.33953125874365,
+            7.0191697403565385
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 129,
+        "local_polynomial_max_all_px": 108.52181469978674,
+        "local_polynomial_median_all_px": 5.919644241469234,
+        "local_polynomial_rmse_all_px": 25.61323622936274,
+        "local_polynomial_rmse_inliers_px": 3.950833314057621,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 230,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_10__wide_02.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_10_row02_col00.jpg",
+        "ptz_index": 10,
+        "row": 2,
+        "saved_h_centre_on_wide": [
+          65.3509521484375,
+          582.8047485351562
+        ],
+        "saved_h_inlier_count": 112,
+        "wide_id": "wide_02"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          8.812330598901667,
+          11.218669229932857
+        ],
+        "column": 1,
+        "h_max_all_px": 202.11484218415637,
+        "h_median_all_px": 12.291802098879085,
+        "h_rmse_all_px": 41.076812263837034,
+        "h_rmse_saved_inliers_px": 4.335714437051353,
+        "local_polynomial_centre_on_wide": [
+          675.7940200520267,
+          591.7706711830579
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            675.7940200520267,
+            591.7706711830579
+          ],
+          [
+            830.5907873169272,
+            -78.83181045948834
+          ],
+          [
+            57.05625411841595,
+            647.8598345945984
+          ],
+          [
+            44.189461371100265,
+            26.484188680916247
+          ],
+          [
+            -35.40729987331483,
+            -29.57753588129689
+          ],
+          [
+            44.72731974674366,
+            -26.543211578622618
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 138,
+        "local_polynomial_max_all_px": 87.01433132346868,
+        "local_polynomial_median_all_px": 8.921912895947955,
+        "local_polynomial_rmse_all_px": 26.629099919321387,
+        "local_polynomial_rmse_inliers_px": 4.2849519539292285,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 325,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_11__wide_02.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_11_row02_col01.jpg",
+        "ptz_index": 11,
+        "row": 2,
+        "saved_h_centre_on_wide": [
+          666.981689453125,
+          580.552001953125
+        ],
+        "saved_h_inlier_count": 121,
+        "wide_id": "wide_02"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -0.4353487037312789,
+          -8.406818365986283
+        ],
+        "column": 2,
+        "h_max_all_px": 99.04673518701901,
+        "h_median_all_px": 24.373611638849326,
+        "h_rmse_all_px": 41.09794926223641,
+        "h_rmse_saved_inliers_px": 3.583749627965327,
+        "local_polynomial_centre_on_wide": [
+          1286.0554960228312,
+          604.0275078058887
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1286.0554960228312,
+            604.0275078058887
+          ],
+          [
+            862.8760762893339,
+            52.186663702850126
+          ],
+          [
+            -11.883220024246953,
+            666.5165780200002
+          ],
+          [
+            -22.994717473042613,
+            -7.853733933067943
+          ],
+          [
+            -46.81454051069784,
+            -22.41086537383483
+          ],
+          [
+            -21.109679858510162,
+            47.03210870475749
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 182,
+        "local_polynomial_max_all_px": 84.8914123645949,
+        "local_polynomial_median_all_px": 12.166039510643879,
+        "local_polynomial_rmse_all_px": 26.779037392675168,
+        "local_polynomial_rmse_inliers_px": 3.616421702610847,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 495,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_12__wide_06.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_12_row02_col02.jpg",
+        "ptz_index": 12,
+        "row": 2,
+        "saved_h_centre_on_wide": [
+          1286.4908447265625,
+          612.434326171875
+        ],
+        "saved_h_inlier_count": 139,
+        "wide_id": "wide_06"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -5.229793580162777,
+          2.0136443139579114
+        ],
+        "column": 3,
+        "h_max_all_px": 194.8092161949506,
+        "h_median_all_px": 47.43796916664953,
+        "h_rmse_all_px": 71.63880762174485,
+        "h_rmse_saved_inliers_px": 3.7202437026919406,
+        "local_polynomial_centre_on_wide": [
+          1859.6421546620247,
+          602.6426726342704
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1859.6421546620247,
+            602.6426726342704
+          ],
+          [
+            824.7274652146623,
+            138.85618619605583
+          ],
+          [
+            -104.39118376883772,
+            653.5780027274351
+          ],
+          [
+            -41.17032350022856,
+            34.66791658760152
+          ],
+          [
+            -61.66008098307688,
+            13.550550961369673
+          ],
+          [
+            -38.695203441794774,
+            26.229385828439305
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 157,
+        "local_polynomial_max_all_px": 108.74690421751122,
+        "local_polynomial_median_all_px": 13.39605748626212,
+        "local_polynomial_rmse_all_px": 36.61364941544253,
+        "local_polynomial_rmse_inliers_px": 3.8446616282193395,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 425,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_13__wide_06.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_13_row02_col03.jpg",
+        "ptz_index": 13,
+        "row": 2,
+        "saved_h_centre_on_wide": [
+          1864.8719482421875,
+          600.6290283203125
+        ],
+        "saved_h_inlier_count": 119,
+        "wide_id": "wide_06"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -48.68067424443689,
+          22.595268605127444
+        ],
+        "column": 4,
+        "h_max_all_px": 246.147516135772,
+        "h_median_all_px": 27.126996840978887,
+        "h_rmse_all_px": 98.1018336205316,
+        "h_rmse_saved_inliers_px": 3.5138795604358446,
+        "local_polynomial_centre_on_wide": [
+          2449.385487864938,
+          612.102959034815
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            2449.385487864938,
+            612.102959034815
+          ],
+          [
+            727.188591383578,
+            269.5212316649952
+          ],
+          [
+            -169.4674475354442,
+            663.1454070781447
+          ],
+          [
+            -58.13033383974289,
+            48.03834492891758
+          ],
+          [
+            -53.448599616329396,
+            69.86304532577714
+          ],
+          [
+            -50.05237814396801,
+            4.639978712242737
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 130,
+        "local_polynomial_max_all_px": 162.8181586302669,
+        "local_polynomial_median_all_px": 7.527416107191032,
+        "local_polynomial_rmse_all_px": 45.154199302036105,
+        "local_polynomial_rmse_inliers_px": 3.3651982989076035,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 268,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_14__wide_06.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_14_row02_col04.jpg",
+        "ptz_index": 14,
+        "row": 2,
+        "saved_h_centre_on_wide": [
+          2498.066162109375,
+          589.5076904296875
+        ],
+        "saved_h_inlier_count": 80,
+        "wide_id": "wide_06"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -0.584015387420564,
+          -0.25400235273696126
+        ],
+        "column": 0,
+        "h_max_all_px": 123.68105870228587,
+        "h_median_all_px": 12.609614103211713,
+        "h_rmse_all_px": 39.578028428379575,
+        "h_rmse_saved_inliers_px": 3.7958237033359437,
+        "local_polynomial_centre_on_wide": [
+          98.63011882888803,
+          853.4005996980443
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            98.63011882888803,
+            853.4005996980443
+          ],
+          [
+            733.7572044473295,
+            -243.32014177031593
+          ],
+          [
+            221.21275004437692,
+            611.514403129411
+          ],
+          [
+            50.8923864063774,
+            36.187307948180255
+          ],
+          [
+            -75.33640533669973,
+            -119.28639146419334
+          ],
+          [
+            34.35394459364258,
+            129.28412162594367
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 139,
+        "local_polynomial_max_all_px": 286.06576514261536,
+        "local_polynomial_median_all_px": 9.044356254661437,
+        "local_polynomial_rmse_all_px": 59.646570709556514,
+        "local_polynomial_rmse_inliers_px": 3.8643279733966396,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 309,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_15__wide_02.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_15_row03_col00.jpg",
+        "ptz_index": 15,
+        "row": 3,
+        "saved_h_centre_on_wide": [
+          99.2141342163086,
+          853.6546020507812
+        ],
+        "saved_h_inlier_count": 116,
+        "wide_id": "wide_02"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -4.588246654998102,
+          -26.95152282055676
+        ],
+        "column": 1,
+        "h_max_all_px": 137.75173887471783,
+        "h_median_all_px": 19.962171964845215,
+        "h_rmse_all_px": 38.99278025250866,
+        "h_rmse_saved_inliers_px": 4.1386211597015,
+        "local_polynomial_centre_on_wide": [
+          675.0355326418769,
+          816.5973663395995
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            675.0355326418769,
+            816.5973663395995
+          ],
+          [
+            818.2826377916479,
+            -143.2993547318938
+          ],
+          [
+            119.84463968383704,
+            893.9699367125011
+          ],
+          [
+            26.812811811155342,
+            -28.438072015310382
+          ],
+          [
+            -60.38208913281241,
+            39.31675731024377
+          ],
+          [
+            8.169972675246754,
+            -177.7544135866243
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 138,
+        "local_polynomial_max_all_px": 435.10391217118377,
+        "local_polynomial_median_all_px": 13.628297388851006,
+        "local_polynomial_rmse_all_px": 113.52881367608776,
+        "local_polynomial_rmse_inliers_px": 3.6265515441669867,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 414,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_16__wide_06.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_16_row03_col01.jpg",
+        "ptz_index": 16,
+        "row": 3,
+        "saved_h_centre_on_wide": [
+          679.623779296875,
+          843.5488891601562
+        ],
+        "saved_h_inlier_count": 116,
+        "wide_id": "wide_06"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          4.976822867424062,
+          12.348636177070148
+        ],
+        "column": 2,
+        "h_max_all_px": 110.34033474529505,
+        "h_median_all_px": 26.549045513303945,
+        "h_rmse_all_px": 36.12163649610775,
+        "h_rmse_saved_inliers_px": 3.407373312694371,
+        "local_polynomial_centre_on_wide": [
+          1275.967057242424,
+          871.2079501419139
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1275.967057242424,
+            871.2079501419139
+          ],
+          [
+            847.5934176942018,
+            44.9169988489703
+          ],
+          [
+            -25.06010058622371,
+            704.0491434827135
+          ],
+          [
+            -19.679683752662584,
+            -23.776225064918737
+          ],
+          [
+            -34.077514069496345,
+            -17.011376969231648
+          ],
+          [
+            -26.540993727128523,
+            56.717303040077326
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 188,
+        "local_polynomial_max_all_px": 90.5119534699829,
+        "local_polynomial_median_all_px": 11.251642502240273,
+        "local_polynomial_rmse_all_px": 24.031526088533717,
+        "local_polynomial_rmse_inliers_px": 3.997126812868064,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 507,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_17__wide_02.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_17_row03_col02.jpg",
+        "ptz_index": 17,
+        "row": 3,
+        "saved_h_centre_on_wide": [
+          1270.990234375,
+          858.8593139648438
+        ],
+        "saved_h_inlier_count": 140,
+        "wide_id": "wide_02"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          17.170653688538323,
+          -8.858398249785068
+        ],
+        "column": 3,
+        "h_max_all_px": 88.57984428948116,
+        "h_median_all_px": 12.448195643364759,
+        "h_rmse_all_px": 29.56578551363174,
+        "h_rmse_saved_inliers_px": 4.407216140115862,
+        "local_polynomial_centre_on_wide": [
+          1839.6281732197883,
+          873.7804567306837
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1839.6281732197883,
+            873.7804567306837
+          ],
+          [
+            806.5146033059871,
+            164.40797294135277
+          ],
+          [
+            -138.9658778824368,
+            691.1570884210909
+          ],
+          [
+            -53.46512057966669,
+            -13.981339113365905
+          ],
+          [
+            -33.55917435312254,
+            41.537545063435914
+          ],
+          [
+            -39.12733769334716,
+            42.186069930402724
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 161,
+        "local_polynomial_max_all_px": 101.7555966033182,
+        "local_polynomial_median_all_px": 11.021158537058307,
+        "local_polynomial_rmse_all_px": 32.929765521283784,
+        "local_polynomial_rmse_inliers_px": 3.4767107181936616,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 410,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_18__wide_00.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_18_row03_col03.jpg",
+        "ptz_index": 18,
+        "row": 3,
+        "saved_h_centre_on_wide": [
+          1822.45751953125,
+          882.6388549804688
+        ],
+        "saved_h_inlier_count": 137,
+        "wide_id": "wide_00"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -59.706977097167055,
+          43.50802358178703
+        ],
+        "column": 4,
+        "h_max_all_px": 1385.3577435328352,
+        "h_median_all_px": 96.34551267313542,
+        "h_rmse_all_px": 129.6954481765825,
+        "h_rmse_saved_inliers_px": 3.253128693033397,
+        "local_polynomial_centre_on_wide": [
+          2437.039849074708,
+          854.6458409645995
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            2437.039849074708,
+            854.6458409645995
+          ],
+          [
+            709.2514522623873,
+            283.21804557449946
+          ],
+          [
+            -223.9613956843611,
+            686.3175295141538
+          ],
+          [
+            -48.40109380500536,
+            10.265162301220869
+          ],
+          [
+            -59.59824031693595,
+            77.28928404066995
+          ],
+          [
+            -52.31488063554599,
+            23.20948821096458
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 128,
+        "local_polynomial_max_all_px": 1343.1964529244613,
+        "local_polynomial_median_all_px": 9.457247767469866,
+        "local_polynomial_rmse_all_px": 90.79828139028004,
+        "local_polynomial_rmse_inliers_px": 3.873426039046339,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 288,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_19__wide_08.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_19_row03_col04.jpg",
+        "ptz_index": 19,
+        "row": 3,
+        "saved_h_centre_on_wide": [
+          2496.746826171875,
+          811.1378173828125
+        ],
+        "saved_h_inlier_count": 75,
+        "wide_id": "wide_08"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          4.359283889668248,
+          11.508753460080698
+        ],
+        "column": 0,
+        "h_max_all_px": 97.37838187637547,
+        "h_median_all_px": 10.588075718564934,
+        "h_rmse_all_px": 34.8230577467601,
+        "h_rmse_saved_inliers_px": 4.118349399140791,
+        "local_polynomial_centre_on_wide": [
+          106.86351820363309,
+          1094.7870737725807
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            106.86351820363309,
+            1094.7870737725807
+          ],
+          [
+            691.0961272359251,
+            -333.1685447377564
+          ],
+          [
+            273.2513716910944,
+            706.684111001641
+          ],
+          [
+            49.48244270739724,
+            74.44739359309241
+          ],
+          [
+            -78.48065217460014,
+            -208.99708683843596
+          ],
+          [
+            38.602066645867666,
+            195.8205357788765
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 102,
+        "local_polynomial_max_all_px": 193.90710140858914,
+        "local_polynomial_median_all_px": 8.65112437103322,
+        "local_polynomial_rmse_all_px": 40.79455446345405,
+        "local_polynomial_rmse_inliers_px": 4.248469670693519,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 244,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_20__wide_03.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_20_row04_col00.jpg",
+        "ptz_index": 20,
+        "row": 4,
+        "saved_h_centre_on_wide": [
+          102.50423431396484,
+          1083.2783203125
+        ],
+        "saved_h_inlier_count": 93,
+        "wide_id": "wide_03"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          7.230019915979483,
+          15.238325408803348
+        ],
+        "column": 1,
+        "h_max_all_px": 92.27316581047629,
+        "h_median_all_px": 19.791809816762996,
+        "h_rmse_all_px": 36.262388369958664,
+        "h_rmse_saved_inliers_px": 4.0946106467222,
+        "local_polynomial_centre_on_wide": [
+          693.7675565370732,
+          1115.0370314634908
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            693.7675565370732,
+            1115.0370314634908
+          ],
+          [
+            798.8152047565324,
+            -123.00845975306578
+          ],
+          [
+            131.59585421293673,
+            751.0636548793203
+          ],
+          [
+            40.19771415887362,
+            -22.313794435769182
+          ],
+          [
+            -55.475179105123544,
+            -26.487799556417862
+          ],
+          [
+            26.70660660779714,
+            152.70314798575316
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 135,
+        "local_polynomial_max_all_px": 83.90744685503246,
+        "local_polynomial_median_all_px": 10.860696731708853,
+        "local_polynomial_rmse_all_px": 23.552010752950263,
+        "local_polynomial_rmse_inliers_px": 3.764924848473891,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 361,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_21__wide_00.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_21_row04_col01.jpg",
+        "ptz_index": 21,
+        "row": 4,
+        "saved_h_centre_on_wide": [
+          686.5375366210938,
+          1099.7987060546875
+        ],
+        "saved_h_inlier_count": 116,
+        "wide_id": "wide_00"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          0.44859095248625636,
+          12.339118663280942
+        ],
+        "column": 2,
+        "h_max_all_px": 85.33294047899142,
+        "h_median_all_px": 15.624819906859926,
+        "h_rmse_all_px": 26.44295134229637,
+        "h_rmse_saved_inliers_px": 4.195337885317503,
+        "local_polynomial_centre_on_wide": [
+          1281.8869454446738,
+          1167.0999829210934
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1281.8869454446738,
+            1167.0999829210934
+          ],
+          [
+            833.9645462088474,
+            30.866738937491846
+          ],
+          [
+            -33.35331955443951,
+            680.3946160343445
+          ],
+          [
+            -6.303897041309369,
+            -48.33427669278848
+          ],
+          [
+            -30.91044455058224,
+            25.914846226754097
+          ],
+          [
+            -4.136074196607865,
+            -21.290811515902377
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 188,
+        "local_polynomial_max_all_px": 69.74696670238906,
+        "local_polynomial_median_all_px": 12.749709533964594,
+        "local_polynomial_rmse_all_px": 28.442415454109188,
+        "local_polynomial_rmse_inliers_px": 3.707038424853872,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 518,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_22__wide_01.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_22_row04_col02.jpg",
+        "ptz_index": 22,
+        "row": 4,
+        "saved_h_centre_on_wide": [
+          1281.4383544921875,
+          1154.7608642578125
+        ],
+        "saved_h_inlier_count": 145,
+        "wide_id": "wide_01"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          4.76655564020075,
+          2.7085296625023147
+        ],
+        "column": 3,
+        "h_max_all_px": 77.09557951529578,
+        "h_median_all_px": 17.31830158150863,
+        "h_rmse_all_px": 27.489966061937206,
+        "h_rmse_saved_inliers_px": 4.207782382420567,
+        "local_polynomial_centre_on_wide": [
+          1853.7808378667632,
+          1135.8598968500023
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1853.7808378667632,
+            1135.8598968500023
+          ],
+          [
+            778.8238216788377,
+            182.15337663940045
+          ],
+          [
+            -174.7109565014122,
+            670.6068231979164
+          ],
+          [
+            -24.03280706406474,
+            -25.865483931226095
+          ],
+          [
+            -30.068517469470876,
+            31.93125116041363
+          ],
+          [
+            -23.172669488640906,
+            -21.474177207355368
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 129,
+        "local_polynomial_max_all_px": 76.92473980846819,
+        "local_polynomial_median_all_px": 12.32187050287757,
+        "local_polynomial_rmse_all_px": 25.586668820222837,
+        "local_polynomial_rmse_inliers_px": 3.8610680816795937,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 399,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_23__wide_03.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_23_row04_col03.jpg",
+        "ptz_index": 23,
+        "row": 4,
+        "saved_h_centre_on_wide": [
+          1849.0142822265625,
+          1133.1513671875
+        ],
+        "saved_h_inlier_count": 108,
+        "wide_id": "wide_03"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -4.041391675169507,
+          -1.6569836439134633
+        ],
+        "column": 4,
+        "h_max_all_px": 93.95631272912684,
+        "h_median_all_px": 19.425014110201666,
+        "h_rmse_all_px": 29.9460481893929,
+        "h_rmse_saved_inliers_px": 3.7892629650435854,
+        "local_polynomial_centre_on_wide": [
+          2449.7325341060805,
+          1180.706907957649
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            2449.7325341060805,
+            1180.706907957649
+          ],
+          [
+            647.8062371456499,
+            344.10974873737916
+          ],
+          [
+            -294.403162601488,
+            694.4363070644995
+          ],
+          [
+            -47.76910279326029,
+            1.1965309792505536
+          ],
+          [
+            -48.65747651909098,
+            77.91101606237353
+          ],
+          [
+            -64.91669604410717,
+            12.6622607816943
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 76,
+        "local_polynomial_max_all_px": 104.24520981434313,
+        "local_polynomial_median_all_px": 14.628325035247395,
+        "local_polynomial_rmse_all_px": 34.576590248553366,
+        "local_polynomial_rmse_inliers_px": 3.6068841972891073,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 217,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_24__wide_05.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_24_row04_col04.jpg",
+        "ptz_index": 24,
+        "row": 4,
+        "saved_h_centre_on_wide": [
+          2453.77392578125,
+          1182.3638916015625
+        ],
+        "saved_h_inlier_count": 58,
+        "wide_id": "wide_05"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          11.419003166414797,
+          53.70931614440224
+        ],
+        "column": 0,
+        "h_max_all_px": 102.18686089085361,
+        "h_median_all_px": 9.777399650864774,
+        "h_rmse_all_px": 35.81961540379918,
+        "h_rmse_saved_inliers_px": 4.130116101924089,
+        "local_polynomial_centre_on_wide": [
+          63.040428795076906,
+          1419.2240866522147
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            63.040428795076906,
+            1419.2240866522147
+          ],
+          [
+            628.2364050737469,
+            -422.6523046992095
+          ],
+          [
+            299.1978739140862,
+            575.9777268425553
+          ],
+          [
+            68.02431038891268,
+            21.305747294153605
+          ],
+          [
+            8.274467064029892,
+            -137.69289577659248
+          ],
+          [
+            46.21150606985404,
+            -134.71613490871377
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 64,
+        "local_polynomial_max_all_px": 192.4844318212749,
+        "local_polynomial_median_all_px": 11.189422227380653,
+        "local_polynomial_rmse_all_px": 58.78790587519515,
+        "local_polynomial_rmse_inliers_px": 4.0790098160963675,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 160,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_25__wide_02.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_25_row05_col00.jpg",
+        "ptz_index": 25,
+        "row": 5,
+        "saved_h_centre_on_wide": [
+          51.62142562866211,
+          1365.5147705078125
+        ],
+        "saved_h_inlier_count": 64,
+        "wide_id": "wide_02"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          24.840971576213406,
+          49.363969253725145
+        ],
+        "column": 1,
+        "h_max_all_px": 83.72149543605329,
+        "h_median_all_px": 17.312766574987478,
+        "h_rmse_all_px": 32.341921233926094,
+        "h_rmse_saved_inliers_px": 4.263193799014387,
+        "local_polynomial_centre_on_wide": [
+          692.1025682559009,
+          1456.8435835115376
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            692.1025682559009,
+            1456.8435835115376
+          ],
+          [
+            776.0030224993254,
+            -126.91877044028513
+          ],
+          [
+            179.19784316891844,
+            592.5541120168466
+          ],
+          [
+            16.48601981057277,
+            -56.60569641905133
+          ],
+          [
+            -34.31724264977757,
+            66.60593362811366
+          ],
+          [
+            29.030648829077393,
+            -176.83944258268218
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 126,
+        "local_polynomial_max_all_px": 68.71591546154957,
+        "local_polynomial_median_all_px": 11.418479717400245,
+        "local_polynomial_rmse_all_px": 22.822609034741692,
+        "local_polynomial_rmse_inliers_px": 3.5887233025525713,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 323,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_26__wide_03.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_26_row05_col01.jpg",
+        "ptz_index": 26,
+        "row": 5,
+        "saved_h_centre_on_wide": [
+          667.2615966796875,
+          1407.4796142578125
+        ],
+        "saved_h_inlier_count": 98,
+        "wide_id": "wide_03"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -3.3937374397805797,
+          -18.53671816344945
+        ],
+        "column": 2,
+        "h_max_all_px": 87.85543361495371,
+        "h_median_all_px": 17.536369984711726,
+        "h_rmse_all_px": 27.66071253229307,
+        "h_rmse_saved_inliers_px": 4.248376822995622,
+        "local_polynomial_centre_on_wide": [
+          1279.2227176383444,
+          1496.763696875613
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1279.2227176383444,
+            1496.763696875613
+          ],
+          [
+            820.8942257851351,
+            40.98184827647668
+          ],
+          [
+            -44.529316990236794,
+            579.414333312019
+          ],
+          [
+            8.312696730157768,
+            -64.601784118368
+          ],
+          [
+            -24.927319501127442,
+            -21.30305945988259
+          ],
+          [
+            1.8716466052454734,
+            -168.15155134567956
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 164,
+        "local_polynomial_max_all_px": 82.05855599455107,
+        "local_polynomial_median_all_px": 11.500653024735033,
+        "local_polynomial_rmse_all_px": 27.54938349041536,
+        "local_polynomial_rmse_inliers_px": 3.650592142901429,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 419,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_27__wide_06.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_27_row05_col02.jpg",
+        "ptz_index": 27,
+        "row": 5,
+        "saved_h_centre_on_wide": [
+          1282.616455078125,
+          1515.3004150390625
+        ],
+        "saved_h_inlier_count": 92,
+        "wide_id": "wide_06"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          -3.465959211575182,
+          -6.121144310911632
+        ],
+        "column": 3,
+        "h_max_all_px": 165.8568168829296,
+        "h_median_all_px": 31.733946627125558,
+        "h_rmse_all_px": 43.1081686164016,
+        "h_rmse_saved_inliers_px": 4.030285043941514,
+        "local_polynomial_centre_on_wide": [
+          1834.3654616868623,
+          1487.1769513922134
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            1834.3654616868623,
+            1487.1769513922134
+          ],
+          [
+            724.1785956308173,
+            212.3811013434056
+          ],
+          [
+            -266.2355088516196,
+            608.8350311317025
+          ],
+          [
+            -46.07993306159153,
+            -48.5022517691977
+          ],
+          [
+            -89.43110746297454,
+            -11.967008191657772
+          ],
+          [
+            -72.6342011483757,
+            -91.99665026647823
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 127,
+        "local_polynomial_max_all_px": 94.87948429676501,
+        "local_polynomial_median_all_px": 10.172145096127824,
+        "local_polynomial_rmse_all_px": 28.03461489927463,
+        "local_polynomial_rmse_inliers_px": 4.013908957267736,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 335,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_28__wide_04.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_28_row05_col03.jpg",
+        "ptz_index": 28,
+        "row": 5,
+        "saved_h_centre_on_wide": [
+          1837.8314208984375,
+          1493.298095703125
+        ],
+        "saved_h_inlier_count": 88,
+        "wide_id": "wide_04"
+      },
+      {
+        "centre_difference_polynomial_minus_h_px": [
+          5.844079490234435,
+          -5.62109349497041
+        ],
+        "column": 4,
+        "h_max_all_px": 2046.6582733231194,
+        "h_median_all_px": 13.724289571843109,
+        "h_rmse_all_px": 484.9768046432233,
+        "h_rmse_saved_inliers_px": 3.6625616472556066,
+        "local_polynomial_centre_on_wide": [
+          2507.2151732402344,
+          1496.5986330675296
+        ],
+        "local_polynomial_coefficients_wide_xy": [
+          [
+            2507.2151732402344,
+            1496.5986330675296
+          ],
+          [
+            650.7304824180686,
+            403.33795023851144
+          ],
+          [
+            -318.6245721065409,
+            619.8943233102641
+          ],
+          [
+            36.14251891627629,
+            -13.333584932197425
+          ],
+          [
+            86.676198573697,
+            22.817367943377644
+          ],
+          [
+            0.5594841007527265,
+            -76.14174399527272
+          ]
+        ],
+        "local_polynomial_degree": 2,
+        "local_polynomial_inlier_count": 32,
+        "local_polynomial_max_all_px": 2002.2309550211098,
+        "local_polynomial_median_all_px": 12.208512550477693,
+        "local_polynomial_rmse_all_px": 474.5161517629758,
+        "local_polynomial_rmse_inliers_px": 3.098979646281367,
+        "local_polynomial_terms_powers_xy": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "match_count": 80,
+        "match_file": "02_aliked_lightglue_wide_ptz_mapping\\matches\\ptz_29__wide_03.npz",
+        "ptz_image": "01_ptz_overlap_grid\\raw\\ptz_29_row05_col04.jpg",
+        "ptz_index": 29,
+        "row": 5,
+        "saved_h_centre_on_wide": [
+          2501.37109375,
+          1502.2197265625
+        ],
+        "saved_h_inlier_count": 29,
+        "wide_id": "wide_03"
+      }
+    ],
+    "ransac_threshold_px": 7.0
+  },
+  "pipeline": "Polynomial local PTZ->Wide centres + Polynomial global Wide->grid + existing pose surface",
+  "source_mapping": "C:\\thuctap\\RAY_WORLD\\pipeline_ptz_wide_overlap_20260908\\run_20260908_165532\\02_aliked_lightglue_wide_ptz_mapping\\wide_pixel_to_ptz_mapping.json",
+  "source_run": "C:\\thuctap\\RAY_WORLD\\pipeline_ptz_wide_overlap_20260908\\run_20260908_165532",
+  "status": "complete"
+}

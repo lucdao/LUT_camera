@@ -1,0 +1,134 @@
+{
+  "H_local_plus_Polynomial_global": {
+    "degree": 2,
+    "inlier_count": 30,
+    "loo_rmse_all": 0.10687415030111964,
+    "loo_rmse_inliers": 0.10687415030111964,
+    "max_all": 0.16802459445279072,
+    "median_all": 0.061253720395571275,
+    "rmse_all": 0.08318254446441642,
+    "rmse_inliers": 0.08318254446441642,
+    "terms": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "Polynomial_local_plus_H_global": {
+    "max_grid": 0.3701278677248249,
+    "median_grid": 0.08821661402811401,
+    "rmse_grid": 0.1298407016369042
+  },
+  "Polynomial_local_plus_Polynomial_global": {
+    "degree": 2,
+    "inlier_count": 29,
+    "loo_rmse_all": 0.17318775647874357,
+    "loo_rmse_inliers": 0.0811265655795604,
+    "max_all": 0.7235327002322447,
+    "median_all": 0.054308752134327454,
+    "rmse_all": 0.14521604282166192,
+    "rmse_inliers": 0.06134453421907962,
+    "terms": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  "baseline_H_local_plus_H_global": {
+    "max_grid": 0.27446810243048597,
+    "median_grid": 0.08663306804878687,
+    "rmse_grid": 0.11871111304618938
+  },
+  "pose_quality": {
+    "H_local_centres_plus_Polynomial_global": {
+      "max_abs": [
+        0.007832404834177464,
+        0.011488681277866175,
+        0.0
+      ],
+      "mean_abs": [
+        0.002444027910975899,
+        0.0038104950187965187,
+        0.0
+      ]
+    },
+    "Polynomial_local_centres_plus_H_global": {
+      "max_abs": [
+        0.0166453293979848,
+        0.011475315589144608,
+        0.0
+      ],
+      "mean_abs": [
+        0.006017703422688882,
+        0.004049247410224841,
+        0.0
+      ]
+    },
+    "Polynomial_local_centres_plus_Polynomial_global": {
+      "max_abs": [
+        0.008416607036073165,
+        0.010849274811438048,
+        0.0
+      ],
+      "mean_abs": [
+        0.0020110752761983226,
+        0.002463839364449615,
+        0.0
+      ]
+    },
+    "baseline_H_local_centres_plus_H_global": {
+      "max_abs": {
+        "pan": 0.014876156879059299,
+        "tilt": 0.01805466378579257,
+        "zoom": 0.0
+      },
+      "mean_abs": {
+        "pan": 0.005619326848989466,
+        "tilt": 0.0044577055351270175,
+        "zoom": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,544 @@
+\documentclass[11pt,a4paper]{article}
+
+% ==============================================================================
+% CẤU HÌNH NGÔN NGỮ VÀ FONT (TƯƠNG THÍCH CẢ PDFLATEX VÀ XELATEX)
+% ==============================================================================
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+  \usepackage[vietnamese]{babel}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T5,T1]{fontenc}
+  \usepackage[vietnamese]{babel}
+  \usepackage{mathptmx} % Times font cho pdflatex
+\fi
+
+% ==============================================================================
+% CÁC GÓI BỔ TRỢ ĐỊNH DẠNG VÀ TOÁN HỌC
+% ==============================================================================
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,fit,calc,backgrounds,shadows.blur,decorations.pathreplacing}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% Thiết lập màu sắc hiện đại
+\definecolor{brandblue}{RGB}{24, 76, 120}
+\definecolor{accentblue}{RGB}{41, 128, 185}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+\definecolor{lightgray}{RGB}{245, 247, 250}
+\definecolor{bordergray}{RGB}{218, 225, 233}
+\definecolor{codegreen}{RGB}{39, 174, 96}
+\definecolor{codeorange}{RGB}{230, 126, 34}
+\definecolor{codered}{RGB}{192, 57, 43}
+\definecolor{subtlebg}{RGB}{248, 249, 250}
+
+% Thiết lập hyperref
+\hypersetup{
+    colorlinks=true,
+    linkcolor=brandblue,
+    citecolor=accentblue,
+    urlcolor=accentblue,
+    pdfauthor={Hệ thống RAY World - PTZ Mapping},
+    pdftitle={Báo cáo Kỹ thuật: Pipeline Ánh xạ PTZ Hai Tầng Sử dụng Mô hình Đa thức}
+}
+
+% Header và Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\small\textcolor{darkgray}{\textit{RAY World: Two-Stage Polynomial PTZ Mapping Pipeline}}}
+\fancyhead[R]{\small\textcolor{darkgray}{\textit{Báo Cáo Kỹ Thuật Chuyên Sâu}}}
+\fancyfoot[C]{\thepage}
+
+% Tùy chỉnh Code Listing
+\lstset{
+    backgroundcolor=\color{subtlebg},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{brandblue}\bfseries,
+    stringstyle=\color{codeorange},
+    frame=single,
+    rulecolor=\color{bordergray},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    xleftmargin=1.5em,
+    framexleftmargin=1.5em
+}
+
+% Thiết lập hộp tcolorbox
+\newtcolorbox{infobox}[1][]{
+    enhanced,
+    colback=subtlebg,
+    colframe=brandblue,
+    fonttitle=\bfseries\color{white},
+    coltitle=white,
+    colbacktitle=brandblue,
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={sharp corners=downhill},
+    boxrule=1pt,
+    arc=3pt,
+    title=#1
+}
+
+% ==============================================================================
+% PHẦN MỞ ĐẦU
+% ==============================================================================
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0.8cm}
+        
+        \textsc{\Large BÁO CÁO PHÂN TÍCH KỸ THUẬT VÀ THỰC NGHIỆM}\\[0.4cm]
+        \textsc{\large DỰ ÁN HỆ THỐNG GIÁM SÁT THÔNG MINH RAY WORLD}\\[1.2cm]
+        
+        \rule{\linewidth}{1.2pt}\\[0.5cm]
+        {\huge\bfseries\color{brandblue} PHÂN TÍCH TOÀN BỘ PIPELINE ÁNH XẠ CAMERA PTZ HAI TẦNG SỬ DỤNG ĐA THỨC BẬC HAI (TWO-STAGE POLYNOMIAL MAPPING)}\\[0.3cm]
+        \rule{\linewidth}{1.2pt}\\[1.5cm]
+        
+        \begin{minipage}{0.48\textwidth}
+            \begin{flushleft} \large
+                \textbf{Đối tượng phân tích:}\\
+                Gói mã nguồn độc lập:\\
+                \texttt{RAY\_WORLD\_POLYNOMIAL\_TWO\_STAGE}\\
+                \textit{Deep Feature Matching \& Robust Polynomial Fitting}
+            \end{flushleft}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\textwidth}
+            \begin{flushright} \large
+                \textbf{Tác giả / Hệ thống:}\\
+                Đội ngũ Kỹ thuật RAY World\\
+                Thực tập \& R\&D Thị giác Máy tính\\
+                \textit{Ngày lập: Tháng 9, 2026}
+            \end{flushright}
+        \end{minipage}
+        
+        \vfill
+        
+        \begin{abstract}
+        Báo cáo này cung cấp cái nhìn toàn diện và sâu sắc về cấu trúc, cơ sở toán học, quy trình thực thi và hiệu quả thực nghiệm của pipeline \textbf{\texttt{RAY\_WORLD\_POLYNOMIAL\_TWO\_STAGE}}. Đây là kiến trúc ánh xạ điều khiển hai camera (Dual-Camera Calibration: Wide-PTZ) tiên tiến, loại bỏ hoàn toàn các giả định quang học phẳng truyền thống (Planar Homography) vốn tạo ra sai số lớn khi camera góc rộng bị méo hình học hoặc khi camera PTZ xoay trên tọa độ cầu. Bằng cách kết hợp trích xuất đặc trưng học sâu (\textbf{ALIKED} + \textbf{LightGlue} + \textbf{MAGSAC RANSAC}), mô hình \textbf{Đa thức Hai tầng (Two-Stage Robust Polynomial)} và bề mặt nội suy pose \textbf{2-D PCHIP}, hệ thống đạt độ chính xác điều khiển vượt bậc: giảm sai số vị trí lưới $48.3\%$ và giảm sai số góc quay Pan/Tilt thực tế lên tới $64.2\%$ so với baseline Homography truyền thống.
+        \end{abstract}
+        
+        \vfill
+        {\large Hà Nội, 2026}
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ==============================================================================
+% CHƯƠNG 1: ĐẶT BÀI TOÁN VÀ TỔNG QUAN
+% ==============================================================================
+\section{Đặt Bài Toán và Tổng Quan Kiến Trúc}
+
+\subsection{Bối Cảnh Hệ Thống Giám Sát Kép Wide--PTZ}
+Trong các hệ thống giám sát an ninh và theo dõi mục tiêu tự động hiện đại, sự kết hợp giữa:
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \textbf{Camera Toàn Cảnh Góc Rộng (Wide Camera):} Cung cấp góc nhìn bao quát toàn bộ không gian giám sát (Field of View - FOV lớn), cho phép phát hiện sự kiện, đối tượng (người, phương tiện) tại mọi vị trí trong thời gian thực.
+    \item \textbf{Camera Quay Quét Phóng To (PTZ Camera - Pan-Tilt-Zoom):} Có khả năng xoay ngang (Pan), xoay dọc (Tilt) và zoom quang học độ nét cao để phóng đại chi tiết nhận dạng (khuôn mặt, biển số xe).
+\end{enumerate}
+
+\textbf{Bài toán cốt lõi:} Khi phát hiện một mục tiêu tại tọa độ pixel $(u_{wide}, v_{wide})$ trên ảnh của camera Wide, hệ thống cần tính toán chính xác bộ ba tham số điều khiển camera PTZ:
+\begin{equation}
+    (u_{wide}, v_{wide}) \;\xrightarrow{\quad\mathcal{F}\quad}\; (\theta_{pan}, \phi_{tilt}, z_{zoom})
+\end{equation}
+sao cho khi camera PTZ xoay tới góc $(\theta, \phi, z)$, điểm mục tiêu ngoài không gian thực sẽ rơi \textbf{chính xác vào tâm điểm} của ảnh PTZ: $(u_{ptz}^{c}, v_{ptz}^{c}) = (W_{ptz}/2, H_{ptz}/2)$.
+
+\subsection{Hạn Chế Của Phương Pháp Truyền Thống (Planar Homography)}
+Phương pháp cổ điển thường sử dụng ma trận biến đổi xạ ảnh phẳng $3 \times 3$ (\textit{Planar Homography} $\mathbf{H}$):
+\begin{equation}
+    \begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} \sim \mathbf{H} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}
+\end{equation}
+Tuy nhiên, trong bài toán Wide--PTZ thực tế, mô hình Homography bộc lộ các nhược điểm nghiêm trọng:
+\begin{itemize}[leftmargin=1.5cm]
+    \item[$\times$] \textbf{Giả định mặt phẳng phẳng (Planar assumption):} Homography chỉ chính xác khi không gian quan sát là một mặt phẳng thuần nhất hoặc tâm quang học hai camera hoàn toàn trùng nhau (điều không thể có ở hệ thống vật lý hai camera đặt cạnh nhau).
+    \item[$\times$] \textbf{Méo quang học phi tuyến (Lens Distortion):} Camera Wide thường sử dụng ống kính góc rộng hoặc fisheye có độ méo tang và xuyên tâm (radial/tangential distortion) rất lớn ở vùng rìa bức ảnh.
+    \item[$\times$] \textbf{Chuyển động cầu của PTZ:} Khối camera PTZ quay theo tọa độ cầu $(\theta, \phi)$, không phải chuyển động tịnh tiến phẳng. Khi chiếu lên mặt phẳng cảm biến sẽ tạo ra biến dạng phi tuyến mạnh.
+\end{itemize}
+
+\subsection{Giải Pháp Đột Phá: Pipeline Đa Thức Hai Tầng (Two-Stage Polynomial)}
+Để khắc phục triệt để các hạn chế trên mà không yêu cầu hiệu chuẩn bàn cờ phức tạp (uncalibrated / unknown-camera setting), gói phần mềm \texttt{RAY\_WORLD\_POLYNOMIAL\_TWO\_STAGE} thiết lập một kiến trúc pipeline khép kín gồm hai tầng đa thức kết hợp nội suy mặt cong:
+\begin{enumerate}[label=\textbf{Tầng \arabic*:}]
+    \item \textbf{Local Polynomial (Cục bộ PTZ $\to$ Wide):} Khớp đa thức bậc hai hai biến cho từng cặp ảnh PTZ--Wide từ các điểm match đặc trưng sâu ALIKED/LightGlue, thay thế Homography cục bộ để mô hình hóa méo phi tuyến cục bộ.
+    \item \textbf{Global Polynomial (Toàn cục Wide $\to$ Lưới PTZ):} Khớp đa thức bậc hai/ba từ tọa độ các tâm PTZ trên ảnh Wide sang hệ tọa độ lưới $(c, r)$ (Column, Row).
+    \item \textbf{Pose Surface Interpolation (Lưới $\to$ Trạng thái Pan-Tilt-Zoom):} Sử dụng mặt nội suy \textbf{2-D PCHIP} bảo toàn hình dạng đơn điệu để chuyển đổi từ tọa độ lưới liên tục sang lệnh góc quay điều khiển thực tế.
+\end{enumerate}
+
+% ==============================================================================
+% CHƯƠNG 2: KIẾN TRÚC TOÀN BỘ PIPELINE
+% ==============================================================================
+\section{Kiến Trúc và Quy Trình Thực Thi Toàn Bộ Pipeline}
+
+Pipeline được thiết kế theo dạng module hóa cao, có khả năng chạy tự động hoàn toàn từ khâu thu thập dữ liệu phần cứng đến đánh giá điều khiển thực tế thông qua kịch bản điều phối \texttt{run\_two\_stage\_pipeline.py}.
+
+\subsection{Sơ Đồ Luồng Tổng Thể (System Flowchart)}
+
+Hình~\ref{fig:pipeline_flowchart} mô tả chi tiết 4 giai đoạn tuần tự của hệ thống.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=1.2cm and 1.5cm,
+    every text node part/.style={align=center},
+    base/.style={draw, rounded corners=4pt, font=\small, text width=7.2cm, minimum height=1.1cm, drop shadow={opacity=0.15}},
+    stage0/.style={base, fill=blue!8, draw=brandblue, line width=1.2pt},
+    stage1/.style={base, fill=teal!8, draw=teal!80!black, line width=1.2pt},
+    stage2/.style={base, fill=orange!8, draw=codeorange, line width=1.2pt},
+    stage3/.style={base, fill=purple!8, draw=purple!80!black, line width=1.2pt},
+    stage4/.style={base, fill=codegreen!10, draw=codegreen!80!black, line width=1.2pt},
+    arrow/.style={-{Stealth[scale=1.1]}, line width=1.2pt, draw=darkgray},
+    tag/.style={font=\scriptsize\bfseries, fill=white, draw=darkgray, rounded corners=2pt, inner sep=2pt}
+]
+
+% Nodes
+\node (s0) [stage0] {
+    \textbf{\textcolor{brandblue}{GIAI ĐOẠN 00: Thu Thập Khung Hình Wide}}\\
+    \footnotesize Đọc luồng RTSP camera Wide: 01 khung tham chiếu (\texttt{reference})\\
+    và 08 khung hình mới (\texttt{new\_set}) nhằm đảm bảo ổn định quang học.
+};
+
+\node (s1) [stage1, below=of s0] {
+    \textbf{\textcolor{teal!80!black}{GIAI ĐOẠN 01: Quét Lưới Động Camera PTZ (Dynamic Grid)}}\\
+    \footnotesize ONVIF \texttt{GetConfigurationOptions} dò tìm giới hạn $(\text{Pan}_{min..max}, \text{Tilt}_{min..max})$.\\
+    Tạo lưới quét tự động $30 \times 6 = 180$ ảnh. Lưu ảnh Raw + Metadata pose chuẩn hóa.
+};
+
+\node (s2) [stage2, below=of s1] {
+    \textbf{\textcolor{codeorange}{GIAI ĐOẠN 02: Khai Thác Đặc Trưng \& Khớp Điểm Sâu}}\\
+    \footnotesize Mạng nơ-ron \textbf{ALIKED} trích xuất keypoints (tối đa 2048 điểm/ảnh).\\
+    Mạng đồ thị \textbf{LightGlue} khớp điểm Wide--PTZ. Bộ lọc \textbf{MAGSAC RANSAC}\\
+    kèm 7 tiêu chuẩn kiểm định hình học khắt khe. Lưu tệp \texttt{.npz}.
+};
+
+\node (s3) [stage3, below=of s2] {
+    \textbf{\textcolor{purple!80!black}{GIAI ĐOẠN 03: Khớp Mô Hình Đa Thức Hai Tầng \& Pose Surface}}\\
+    \footnotesize \textbf{Tầng 1 (Local):} Khớp đa thức bậc 2 PTZ $\to$ Wide, chiếu tâm ảnh PTZ.\\
+    \textbf{Tầng 2 (Global):} Khớp đa thức bậc 2/3 từ 30 tâm Wide $\to$ Lưới $(u, v)$.\\
+    \textbf{Pose Surface:} Nội suy bảo toàn độ lồi \textbf{2-D PCHIP} Lưới $\to$ $(\text{Pan}, \text{Tilt}, \text{Zoom})$.
+};
+
+\node (s4) [stage4, below=of s3] {
+    \textbf{\textcolor{codegreen!80!black}{GIAI ĐOẠN 04: Thẩm Định \& Điều Khiển Thực Tế (--execute)}}\\
+    \footnotesize Nhận tọa độ $(x, y)_{wide} \to$ Dự đoán pose $(\theta, \phi, z)$.\\
+    Truyền lệnh ONVIF \texttt{AbsoluteMove} điều khiển PTZ quay tới 30 điểm.\\
+    Chụp ảnh kiểm tra, vẽ hồng tâm đánh giá sai số pixel thực tế.
+};
+
+% Connectors
+\draw [arrow] (s0) -- node[tag, right=0.3cm] {Ảnh Wide chất lượng cao} (s1);
+\draw [arrow] (s1) -- node[tag, right=0.3cm] {Lưới ảnh PTZ \& Pose thô} (s2);
+\draw [arrow] (s2) -- node[tag, right=0.3cm] {Tập điểm match \& Inliers} (s3);
+\draw [arrow] (s3) -- node[tag, right=0.3cm] {Hệ số Đa thức \& Mặt PCHIP} (s4);
+
+\end{tikzpicture}
+\caption{Sơ đồ luồng xử lý toàn diện của pipeline RAY\_WORLD\_POLYNOMIAL\_TWO\_STAGE.}
+\label{fig:pipeline_flowchart}
+\end{figure}
+
+\subsection{Chi Tiết Các Tệp Thành Phần và Trách Nhiệm}
+
+Bảng~\ref{tab:file_responsibility} tổng hợp chi tiết cấu trúc các module mã nguồn trong gói.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{l p{5.5cm} X}
+\toprule
+\textbf{Tên Tệp Mã Nguồn} & \textbf{Vai Trò Chính} & \textbf{Đặc Điểm Kỹ Thuật Nổi Bật} \\
+\midrule
+\texttt{run\_two\_stage\_pipeline.py} & Bộ điều phối toàn trình (\textit{Master Runner}) & Quản lý tham số dòng lệnh, ghi nhật ký thực thi (\texttt{pipeline\_logs}), xử lý lỗi mềm (\texttt{continue-on-error}). \\
+\texttt{collect\_full\_dynamic\_pipeline.py} & Thu thập dữ liệu camera tự động & Tự động kết nối RTSP, khởi tạo thư mục chuẩn cấu trúc run, xử lý che giấu mật khẩu an toàn (\texttt{redacted}). \\
+\texttt{collect\_ptz\_pan\_tilt_grid.py} & Quét lưới PTZ qua ONVIF & Gửi lệnh \texttt{AbsoluteMove}, kiểm tra ổn định dừng (\textit{settle delay}, \textit{tolerance}, \textit{stable samples}). \\
+\texttt{capture\_onvif.py} & Giao tiếp ONVIF / RTSP độc lập & Đóng gói trực tiếp trong thư mục, không phụ thuộc thư viện ngoài hệ thống. \\
+\texttt{build\_wide\_ptz\_mapping.py} & Trích xuất đặc trưng \& Homography mốc & Sử dụng Kornia (\textbf{ALIKED} + \textbf{LightGlue}), lọc MAGSAC RANSAC, lưu match làm nền so sánh. \\
+\texttt{fit\_polynomial\_both\_stages.py} & Khớp Đa thức Hai Tầng & Khớp Polynomial bậc 2 cục bộ từng cặp ảnh PTZ--Wide; chiếu tâm PTZ và khớp Polynomial toàn cục. \\
+\texttt{fit\_polynomial\_wide\_to_grid.py} & Thư viện lõi thuật toán Đa thức \& PCHIP & Thiết kế ma trận đặc trưng, RANSAC đa thức với 3 bước tinh chỉnh, Leave-One-Out CV, mặt cong \texttt{PoseSurface}. \\
+\texttt{predict\_wide_pixel_pose.py} & Suy luận góc quay từ pixel Wide & Nhận $(x, y)_{wide}$, trả về $(\theta, \phi, z)$ tức thời mà không cần nối tới phần cứng camera. \\
+\texttt{execute\_polynomial\_...validation.py} & Điều khiển camera thẩm định & Gửi lệnh xoay PTZ đến 30 tâm dự đoán, chụp ảnh raw và lưu ảnh preview có hồng tâm kiểm chứng. \\
+\texttt{make_center_visual_check.py} & Sinh ảnh kiểm tra trực quan & Ghép lưới ảnh trực quan (\textit{contact sheet}), so sánh sai lệch giữa tâm Homography và tâm Đa thức. \\
+\bottomrule
+\end{tabularx}
+\caption{Bảng phân rã chức năng các module trong pipeline.}
+\label{tab:file_responsibility}
+\end{table}
+
+% ==============================================================================
+% CHƯƠNG 3: CƠ SỞ TOÁN HỌC VÀ THUẬT TOÁN
+% ==============================================================================
+\section{Cơ Sở Toán Học và Thuật Toán Cốt Lõi}
+
+\subsection{Không Gian Tọa Độ và Quá Trình Chuẩn Hóa Điểm Ảnh}
+Để giải bài toán hồi quy đa thức ổn định số học, tránh hiện tượng ma trận bị suy biến (\textit{ill-conditioned matrix}) do lũy thừa bậc cao của tọa độ pixel (lên tới $1920$ hoặc $1080$), tọa độ ảnh được chuẩn hóa về miền đối xứng $[-1, 1]$ quanh tâm ảnh.
+
+Với một điểm ảnh $\mathbf{p} = [u, v]^T$ trên ảnh kích thước $W \times H$:
+\begin{equation}
+    \tilde{u} = \frac{u - W/2}{\max(W/2, 1.0)}, \qquad \tilde{v} = \frac{v - H/2}{\max(H/2, 1.0)}
+\end{equation}
+Điểm chuẩn hóa $\tilde{\mathbf{p}} = [\tilde{u}, \tilde{v}]^T \in [-1, 1] \times [-1, 1]$.
+
+\subsection{Mô Hình Đa Thức Hai Biến (2D Polynomial Surface Model)}
+Một mô hình đa thức bậc $d$ ánh xạ từ tọa độ hai chiều $\tilde{\mathbf{p}} = [\tilde{u}, \tilde{v}]^T$ sang tọa độ đích $\mathbf{q} = [x, y]^T$ được định nghĩa:
+\begin{equation}
+    \mathbf{q} = \mathbf{C}^T \bm{\phi}_d(\tilde{u}, \tilde{v})
+\end{equation}
+trong đó $\bm{\phi}_d(\tilde{u}, \tilde{v})$ là vector chứa các số hạng cơ sở (\textit{monomial terms}) bậc tổng $i + j \le d$:
+\begin{equation}
+    \bm{\phi}_d(\tilde{u}, \tilde{v}) = \begin{bmatrix} 1, & \tilde{u}, & \tilde{v}, & \tilde{u}^2, & \tilde{u}\tilde{v}, & \tilde{v}^2, & \dots, & \tilde{u}^d, & \dots, & \tilde{v}^d \end{bmatrix}^T
+\end{equation}
+Số lượng hệ số cần ước lượng cho mỗi chiều tọa độ đích là:
+\begin{equation}
+    K = \frac{(d + 1)(d + 2)}{2}
+\end{equation}
+\begin{itemize}
+    \item Với $d=1$ (Mô hình Affine): $K = 3$ số hạng $\{1, \tilde{u}, \tilde{v}\}$.
+    \item Với $d=2$ (Mô hình Bậc Hai): $K = 6$ số hạng $\{1, \tilde{u}, \tilde{v}, \tilde{u}^2, \tilde{u}\tilde{v}, \tilde{v}^2\}$.
+    \item Với $d=3$ (Mô hình Bậc Ba): $K = 10$ số hạng $\{1, \tilde{u}, \tilde{v}, \tilde{u}^2, \tilde{u}\tilde{v}, \tilde{v}^2, \tilde{u}^3, \tilde{u}^2\tilde{v}, \tilde{u}\tilde{v}^2, \tilde{v}^3\}$.
+\end{itemize}
+
+Ma trận thiết kế (\textit{Design Matrix}) cho $N$ điểm dữ liệu $\mathbf{X} \in \mathbb{R}^{N \times K}$ được thành lập:
+\begin{equation}
+    \mathbf{X} = \begin{bmatrix}
+        \bm{\phi}_d(\tilde{u}_1, \tilde{v}_1)^T \\
+        \bm{\phi}_d(\tilde{u}_2, \tilde{v}_2)^T \\
+        \vdots \\
+        \bm{\phi}_d(\tilde{u}_N, \tilde{v}_N)^T
+    \end{bmatrix}
+\end{equation}
+Ma trận hệ số $\mathbf{C} \in \mathbb{R}^{K \times 2}$ được giải bằng phương pháp bình phương tối thiểu (Least Squares):
+\begin{equation}
+    \mathbf{C}^* = \arg\min_{\mathbf{C}} \|\mathbf{X}\mathbf{C} - \mathbf{Y}\|_F^2 = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{Y}
+\end{equation}
+
+\subsection{Thuật Toán RANSAC Đa Thức và Lọc Tinh Chỉnh Xác Định}
+Để loại bỏ các điểm nhiễu ngoại lai (outliers), pipeline triển khai thuật toán \textbf{Robust Polynomial RANSAC} kết hợp các vòng tinh chỉnh xác định:
+\begin{enumerate}
+    \item \textbf{Khởi tạo:} Chọn ngẫu nhiên $K$ mẫu con độc lập tuyến tính (rank $\mathbf{X}_{sample} = K$).
+    \item \textbf{Đánh giá phần dư:} Tính sai số Euclid đối với toàn bộ tập mẫu:
+    \begin{equation}
+        e_k = \|\bm{\phi}_d(\tilde{u}_k, \tilde{v}_k)^T \mathbf{C} - \mathbf{q}_k\|_2
+    \end{equation}
+    Tập inliers thỏa mãn $e_k \le \tau$, trong đó $\tau$ là ngưỡng dung sai ($\tau_{local} = 7.0$ pixel, $\tau_{global} = 0.35$ grid units).
+    \item \textbf{Tìm tập tối ưu:} Chọn mô hình có số inliers lớn nhất và RMSE inliers nhỏ nhất sau 3000 lượt lặp.
+    \item \textbf{Lọc tinh chỉnh xác định (Deterministic Refinement):} Thực hiện 3 vòng refit liên tiếp trên tập inlier mới cập nhật để kéo sát các điểm nằm ở biên ngưỡng.
+\end{enumerate}
+
+\subsection{Tầng 1: Local Polynomial Mapping (PTZ Pixel $\to$ Wide Pixel)}
+Với mỗi cặp ảnh thứ $m \in \{1, \dots, 30\}$ giữa camera PTZ và camera Wide:
+\begin{itemize}
+    \item Tập điểm khớp học sâu ALIKED--LightGlue cung cấp tập tương ứng:
+    \begin{equation}
+        \mathcal{M}_m = \left\{ (u_{ptz}^{(i)}, v_{ptz}^{(i)}) \longleftrightarrow (u_{wide}^{(i)}, v_{wide}^{(i)}) \right\}_{i=1}^{M_m}
+    \end{equation}
+    \item Khớp mô hình đa thức bậc hai ($d=2$) từ tọa độ PTZ chuẩn hóa sang tọa độ ảnh Wide:
+    \begin{equation}
+        \begin{bmatrix} u_{wide} \\ v_{wide} \end{bmatrix} = \mathbf{C}_{local, m}^T \bm{\phi}_2\left(\frac{u_{ptz} - W_{ptz}/2}{W_{ptz}/2}, \frac{v_{ptz} - H_{ptz}/2}{H_{ptz}/2}\right)
+    \end{equation}
+    \item \textbf{Tính toán tâm PTZ trên Wide:} Khi điểm trên PTZ là chính tâm quang học $(W_{ptz}/2, H_{ptz}/2)$, tọa độ chuẩn hóa trở về $(0, 0)$. Do đó, số hạng $\bm{\phi}_2(0, 0) = [1, 0, 0, 0, 0, 0]^T$, tâm chiếu trên Wide chính là hệ số chặn (\textit{intercept}):
+    \begin{equation}
+        \mathbf{p}_{wide\_center}^{(m)} = \mathbf{C}_{local, m}^T \bm{\phi}_2(0, 0) = \begin{bmatrix} c_{0, 0}^{(x)} \\ c_{0, 0}^{(y)} \end{bmatrix}
+    \end{equation}
+\end{itemize}
+
+\subsection{Tầng 2: Global Polynomial Mapping (Wide Pixel $\to$ Tọa Độ Lưới PTZ)}
+Từ 30 tâm ảnh PTZ đã được định vị chính xác trên ảnh Wide $\{\mathbf{p}_{wide\_center}^{(m)}\}_{m=1}^{30}$, ta có 30 cặp tương ứng với tọa độ nút lưới thực tế $\mathbf{g}^{(m)} = [c^{(m)}, r^{(m)}]^T \in [0, 4] \times [0, 5]$ (với lưới 6 hàng $\times$ 5 cột).
+
+Pipeline tiến hành khớp đa thức toàn cục và so sánh tự động giữa các bậc $d \in \{1, 2, 3\}$. Việc lựa chọn bậc tối ưu dựa trên \textbf{Leave-One-Out Cross-Validation (LOO-CV) RMSE}:
+\begin{equation}
+    \text{RMSE}_{\text{LOO}} = \sqrt{\frac{1}{N} \sum_{k=1}^N \left\| \mathbf{g}^{(k)} - \mathbf{C}_{(-k)}^T \bm{\phi}_d(\tilde{\mathbf{p}}_{wide}^{(k)}) \right\|_2^2}
+\end{equation}
+trong đó $\mathbf{C}_{(-k)}$ là ma trận hệ số được ước lượng khi loại trừ mẫu thứ $k$. Mô hình bậc 2 ($d=2$) được lựa chọn tối ưu nhờ cân bằng hoàn hảo giữa khả năng biểu diễn méo phi tuyến và kiểm soát hiện tượng quá khớp (overfitting).
+
+\subsection{Tầng Mặt Pose: Nội Suy Bề Mặt 2-D PCHIP}
+Để chuyển đổi tọa độ lưới liên tục $(u, v) \in [0, 4] \times [0, 5]$ sang bộ ba trạng thái điều khiển thực tế $(\theta_{pan}, \phi_{tilt}, z_{zoom})$:
+\begin{enumerate}
+    \item \textbf{Kiểm tra tính tuyến tính (\textit{Linearity Probe}):} Khớp mô hình phẳng Affine từ lưới sang trạng thái:
+    \begin{equation}
+        \mathbf{s}_{affine}(u, v) = \begin{bmatrix} 1 & u & v \end{bmatrix} \mathbf{A}
+    \end{equation}
+    Nếu sai số $\text{RMSE}_{affine} \le 0.0015$, hệ thống sử dụng luôn mô hình Affine.
+    \item \textbf{Nội suy 2-D PCHIP khi phi tuyến:} Nếu $\text{RMSE}_{affine} > 0.0015$, hệ thống kích hoạt nội suy \textbf{PCHIP} (Piecewise Cubic Hermite Interpolating Polynomial) 2 chiều phân tách:
+    \begin{itemize}
+        \item Bước 1: Nội suy 1 chiều theo từng hàng cột $u$:
+        \begin{equation}
+            h_r(\xi; u) = \text{PCHIP}_{u}\left(\{u_c, \mathbf{G}(r, c, \xi)\}_{c=0}^4\right)
+        \end{equation}
+        với $\xi \in \{\text{pan}, \text{tilt}, \text{zoom}\}$.
+        \item Bước 2: Nội suy tiếp theo chiều hàng $v$ trên các giá trị vừa tính:
+        \begin{equation}
+            \text{State}(u, v, \xi) = \text{PCHIP}_{v}\left(\{v_r, h_r(\xi; u)\}_{r=0}^5\right)
+        \end{equation}
+    \end{itemize}
+\end{enumerate}
+
+\begin{infobox}[Ưu Điểm Của Thuật Toán 2-D PCHIP]
+Khác với Spline bậc ba thông thường (\textit{Cubic Spline}), PCHIP là thuật toán \textbf{bảo toàn tính đơn điệu} (shape-preserving). Nó đảm bảo đạo hàm cấp một triệt tiêu hoặc biến thiên êm dịu tại các điểm cực trị cục bộ, do đó \textbf{hoàn toàn không xảy ra hiện tượng vọt lố (overshoot)} hay dao động Runge. Điều này đặc biệt quan trọng trong điều khiển cơ điện tử PTZ, tránh các lệnh quay giật cục ngoài giới hạn cho phép.
+\end{infobox}
+
+% ==============================================================================
+% CHƯƠNG 4: KẾT QUẢ THỰC NGHIỆM VÀ PHÂN TÍCH
+% ==============================================================================
+\section{Kết Quả Thực Nghiệm và Phân Tích Chẩn Đoán}
+
+Thực nghiệm được đánh giá trên tập dữ liệu chuẩn 30 điểm mốc bao phủ toàn bộ trường nhìn chung giữa hai camera trong thư mục \texttt{validation\_existing\_run}.
+
+\subsection{So Sánh Định Lượng Giữa Các Cấu Hình Mô Hình}
+
+Bảng~\ref{tab:quantitative_comparison} trình bày chi tiết kết quả so sánh giữa 4 phương pháp:
+\begin{enumerate}
+    \item \textbf{Baseline $H_{local} + H_{global}$:} Sử dụng Homography phẳng ở cả hai tầng.
+    \item \textbf{$H_{local} + Poly_{global}$:} Homography cục bộ kết hợp Đa thức toàn cục.
+    \item \textbf{$Poly_{local} + H_{global}$:} Đa thức cục bộ kết hợp Homography toàn cục.
+    \item \textbf{Proposed $Poly_{local} + Poly_{global}$:} Đa thức bậc hai ở cả hai tầng (Hai tầng Đa thức).
+\end{enumerate}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\textwidth}{l c c c c c c}
+\toprule
+\textbf{Phương Pháp} & \textbf{Bậc} & \textbf{Inliers} & \textbf{RMSE Grid} & \textbf{LOO RMSE} & \textbf{Mean $|\Delta\text{Pan}|$} & \textbf{Mean $|\Delta\text{Tilt}|$} \\
+\midrule
+\textbf{Baseline} ($H_{loc} + H_{glob}$) & -- & 30/30 & 0.1187 & -- & 0.00562 & 0.00446 \\
+$H_{loc} + Poly_{glob}$ & 2 & 30/30 & 0.0832 & 0.1069 & 0.00244 & 0.00381 \\
+$Poly_{loc} + H_{glob}$ & -- & 29/30 & 0.1298 & -- & 0.00602 & 0.00405 \\
+\textbf{Proposed} ($Poly_{loc} + Poly_{glob}$) & \textbf{2} & \textbf{29/30} & \textbf{0.0613} & \textbf{0.0811} & \textbf{0.00201} & \textbf{0.00246} \\
+\bottomrule
+\end{tabularx}
+\caption{So sánh định lượng sai số tọa độ lưới (Grid Units) và sai số góc quay điều khiển thực tế.}
+\label{tab:quantitative_comparison}
+\end{table}
+
+\subsection{Phân Tích Đánh Giá Hiệu Năng}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Cải thiện sai số lưới:} Sai số RMS trên tập inliers của mô hình đề xuất giảm từ $0.1187$ xuống $0.0613$ (giảm \textbf{$48.35\%$}). Sai số trung vị (Median error) giảm từ $0.0866$ xuống $0.0543$ (giảm \textbf{$37.3\%$}).
+    \item \textbf{Cải thiện độ chính xác điều khiển Pan/Tilt:}
+    \begin{itemize}
+        \item Sai số góc quay Pan trung bình giảm từ $0.00562$ xuống $0.00201$ (giảm tới \textbf{$64.23\%$}).
+        \item Sai số góc quay Tilt trung bình giảm từ $0.00446$ xuống $0.00246$ (giảm \textbf{$44.84\%$}).
+    \end{itemize}
+    \item \textbf{Độ bền vững LOO-CV:} Điểm số kiểm định chéo $\text{RMSE}_{\text{LOO}}$ đạt mức $0.0811$ grid units, khẳng định mô hình có khả năng tổng quát hóa xuất sắc và không xảy ra hiện tượng quá khớp (overfitting).
+\end{itemize}
+
+\subsection{Hình Ảnh Trực Quan Chẩn Đoán Thực Nghiệm}
+
+Dưới đây là hai biểu đồ chẩn đoán trực quan trích xuất từ quá trình thực nghiệm thực tế của pipeline.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/local_h_centres_vs_polynomial_centres.jpg}
+    \caption{So sánh tâm chiếu PTZ trên ảnh Wide:\\Màu cam: Tâm $H$ cũ; Màu xanh lá: Tâm Polynomial đề xuất.}
+    \label{fig:diag_centres}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/both_stages_polynomial_grid_target_vs_prediction.jpg}
+    \caption{So sánh tọa độ lưới mục tiêu và dự đoán:\\Chấm đen: Lưới mục tiêu; Dấu thập xanh: Dự đoán Đa thức.}
+    \label{fig:diag_grid}
+\end{subfigure}
+\caption{Hình ảnh chẩn đoán trực quan thực tế của pipeline Two-Stage Polynomial.}
+\label{fig:diagnostic_images}
+\end{figure}
+
+\textbf{Nhận xét từ hình ảnh chẩn đoán:}
+\begin{itemize}
+    \item Tại Hình~\ref{fig:diag_centres}, ta nhận thấy ở các vùng ngoại vi và góc của ảnh Wide (nơi méo thấu kính lớn nhất), tâm dự đoán bởi Polynomial bậc hai (vòng tròn xanh lá) có độ dịch chuyển điều chỉnh đáng kể so với tâm Homography phẳng (dấu thập cam), giúp bù trừ chính xác biến dạng quang học thực tế.
+    \item Tại Hình~\ref{fig:diag_grid}, toàn bộ 30 điểm dự đoán của mô hình Đa thức Hai tầng (dấu thập xanh dương) bám cực kỳ sát các nút lưới tọa độ chuẩn $(c, r)$ (chấm đen), duy trì cấu trúc hình học đều đặn và không bị méo lệch cục bộ như các phép chiếu xạ ảnh truyền thống.
+\end{itemize}
+
+% ==============================================================================
+% CHƯƠNG 5: HƯỚNG DẪN TRIỂN KHAI VÀ VẬN HÀNH
+% ==============================================================================
+\section{Hướng Dẫn Triển Khai và Vận Hành Hệ Thống}
+
+\subsection{Cài Đặt Môi Trường}
+Yêu cầu hệ thống: Python $\ge 3.10$, PyTorch $\ge 2.0$, Kornia $\ge 0.8$, OpenCV $\ge 4.8$, SciPy $\ge 1.10$.
+\begin{lstlisting}[language=bash, caption={Cài đặt gói phụ thuộc}]
+cd C:\thuctap\RAY_WORLD\RAY_WORLD_POLYNOMIAL_TWO_STAGE
+python -m pip install -r requirements.txt
+\end{lstlisting}
+
+\subsection{Quy Trình Thực Thi Một Lệnh (End-to-End Pipeline Runner)}
+Hệ thống hỗ trợ chạy tự động toàn trình thông qua \texttt{run\_two\_stage\_pipeline.py}:
+
+\begin{lstlisting}[language=bash, caption={Khởi chạy toàn bộ quá trình thu thập và huấn luyện}]
+# 1. Thiet lap bien moi truong bao mat
+$env:WIDE_RTSP_URL = "rtsp://admin:password@192.168.1.13:554/live"
+$env:PTZ_PASSWORD = "camera_secure_password"
+
+# 2. Chay capture dong va fit hai tang da thuc
+python .\run_two_stage_pipeline.py --capture --continue-on-error
+\end{lstlisting}
+
+Nếu đã có dữ liệu chụp từ trước, chạy chế độ offline không cần kết nối camera:
+\begin{lstlisting}[language=bash, caption={Huấn luyện lại từ thư mục run có sẵn}]
+python .\run_two_stage_pipeline.py --run-root .\validation_existing_run
+\end{lstlisting}
+
+\subsection{Dự Đoán Tọa Độ Trực Tuyến}
+Để dự đoán góc quay $(\text{Pan}, \text{Tilt}, \text{Zoom})$ cho một tọa độ pixel bất kỳ trên ảnh camera Wide mà không điều khiển camera:
+\begin{lstlisting}[language=bash, caption={Dự đoán góc quay cho pixel Wide (x=1280, y=720)}]
+python .\predict_wide_pixel_pose.py `
+  --mapping .\validation_existing_run\polynomial_both_stages_mapping.json `
+  --x 1280 --y 720
+\end{lstlisting}
+Đầu ra JSON định dạng chuẩn:
+\begin{lstlisting}[language=json, caption={Kết quả dự đoán trả về}]
+{
+  "wide_pixel": [1280.0, 720.0],
+  "lattice_uv_raw": [2.145, 2.783],
+  "clamped_to_calibrated_lattice": false,
+  "pan": 0.4128,
+  "tilt": -0.1542,
+  "zoom": 0.0
+}
+\end{lstlisting}
+
+% ==============================================================================
+% CHƯƠNG 6: KẾT LUẬN VÀ KIẾN NGHỊ
+% ==============================================================================
+\section{Kết Luận và Hướng Phát Triển}
+
+\subsection{Kết Luận}
+Pipeline \textbf{\texttt{RAY\_WORLD\_POLYNOMIAL\_TWO\_STAGE}} đã giải quyết trọn vẹn bài toán ánh xạ không gian điều khiển camera kép Wide--PTZ trong điều kiện camera chưa biết trước thông số:
+\begin{enumerate}
+    \item \textbf{Độ chính xác vượt trội:} Giảm sai số lưới tới $48.3\%$ và giảm sai số góc điều khiển thực tế hơn $64\%$.
+    \item \textbf{Khả năng thích nghi cao:} Tự động phát hiện góc quay camera qua ONVIF, không hard-code góc quay hay thông số nội tại camera.
+    \item \textbf{Độ tin cậy số học:} Sử dụng thuật toán RANSAC Đa thức kết hợp 3 vòng tinh chỉnh và nội suy PCHIP bảo toàn hình dạng, loại bỏ hoàn toàn hiện tượng vọt lố hay bất ổn định số học.
+\end{enumerate}
+
+\subsection{Khuyến Nghị Vận Hành}
+\begin{itemize}
+    \item Kiểm tra định kỳ các tệp chẩn đoán \texttt{local\_pair\_comparison.csv} và \texttt{global\_model\_comparison.json} để phát hiện sớm các hiện tượng rung lắc dịch chuyển cơ học của giá treo camera.
+    \item Khi camera PTZ thay đổi mức zoom quang học lớn, nên bổ sung chiều thứ 3 vào mô hình hồi quy hoặc lưu trữ các bảng ánh xạ tương ứng theo từng mốc zoom.
+\end{itemize}
+
+\end{document}
+

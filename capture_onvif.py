@@ -34,9 +34,12 @@ def parse_csv_floats(value: str) -> list[float]:
 
 
 def normalize_tilt(actual_tilt: float, target_tilt: float) -> float:
-    """Normalize the camera-specific report for the requested +0.1 position."""
-    if target_tilt == 0.1 and math.isclose(actual_tilt, 2.81111121, abs_tol=0.01):
-        return 0.1
+    """Normalize the camera-specific positive-tilt report to the command."""
+    # This camera reports the positive-tilt command as 2.81111121 instead of
+    # the normalized ONVIF value.  Preserve the commanded normalized value in
+    # metadata and in the settle check, for every positive target, not only +0.1.
+    if target_tilt >= 0.0 and math.isclose(actual_tilt, 2.81111121, abs_tol=0.01):
+        return target_tilt
     return actual_tilt
 
 
@@ -69,7 +72,7 @@ def wait_until_position(
         position = getattr(status, "Position", None)
         if position is not None and getattr(position, "PanTilt", None) is not None:
             pan = float(position.PanTilt.x)
-            tilt = float(position.PanTilt.y)
+            tilt = normalize_tilt(float(position.PanTilt.y), target_tilt)
             zoom = float(position.Zoom.x) if getattr(position, "Zoom", None) else 0.0
             last_position = (pan, tilt, zoom)
             if (
